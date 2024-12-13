@@ -1,0 +1,16 @@
+{
+    "name": "lapto/php_mvc_framework",
+    "description": "Framework PHP By. Saldi",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "saldisucipto",
+            "email": "saldisucipto@gmail.com"
+        }
+    ],
+    "require": {}
+}
