@@ -7,15 +7,21 @@ use app\cores\Router;
 
 class Application
 {
+    public static string $ROOT_DIR;
     public Router $router;
+    public Request $request;
 
-    public function __construct()
+    public function __construct($rootPath)
     {
-        $this->router = new Router();
+        self::$ROOT_DIR = $rootPath;
+        $this->request = new Request();
+        $this->router = new Router($this->request);
     }
+
+
 
     public function run()
     {
-        $this->router->resolve();
+        echo $this->router->resolve();
     }
 }
