@@ -18,17 +18,16 @@
             <form method="post" action="/contact">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Subject</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input name="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Subject">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Body</label>
-                    <textarea placeholder="Your Message" class="form-control" name="" id="" cols="30" rows="4"></textarea>
+                    <textarea name="body" placeholder="Your Message" class="form-control" name="" id="" cols="30" rows="4"></textarea>
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-primary">Submit</button>

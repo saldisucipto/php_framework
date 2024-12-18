@@ -41,9 +41,8 @@ class Router
         if (is_array($callback)) {
             // var_dump($callback);
             $callback[0] = new $callback[0]();
-            return call_user_func($callback);
         }
-        return call_user_func($callback);
+        return call_user_func($callback, $this->request);
     }
 
     public function render_view($view, $params = [])
