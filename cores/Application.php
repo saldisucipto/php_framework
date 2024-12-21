@@ -12,6 +12,7 @@ class Application
     public Request $request;
     public Response $response;
     public static Application $app;
+    public Controller $controller;
 
     public function __construct($rootPath)
     {
@@ -20,6 +21,19 @@ class Application
         $this->response = new Response();
         $this->request = new Request();
         $this->router = new Router($this->request, $this->response);
+        $this->controller = new Controller();
+    }
+
+
+    // getter controller 
+    public function get_controller()
+    {
+        return $this->controller;
+    }
+
+    public function set_controller(Controller $controller)
+    {
+        $this->controller = $controller;
     }
 
 

@@ -12,23 +12,23 @@
 </head>
 
 <body>
-    <div class="row container">
-        <h1>Login Page</h1>
-        <div class="col-sm-6">
-            <form method="post" action="/login">
-                <div class="form-group">
+    <div class="row container-fluid">
+        <div class="col-sm-6 mx-auto">
+            <form method="post" action="/contact" class="d-flex flex-column gap-3 mt-5 ">
+                <div class="form-group d-flex flex-column gap-2">
+                    <h4>Login </h4>
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Password</label>
-                    <input name="password" type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <div class="form-group d-flex flex-column gap-2">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" placeholder="Password" class="form-control" name="password">
                 </div>
-
-                <hr>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div>
+                    <p>Not Have a Account ? <span><a href="/register">Register Here</a></span> </p>
+                </div>
             </form>
         </div>
     </div>
