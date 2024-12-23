@@ -14,7 +14,7 @@
 <body>
     <div class="row container-fluid">
         <div class="col-sm-6 mx-auto">
-            <form method="post" action="/contact" class="d-flex flex-column gap-3 mt-5 ">
+            <form method="post" action="/register" class="d-flex flex-column gap-3 mt-5 ">
                 <div class="row">
                     <h4>Create Account </h4>
                     <div class=" col-sm-6 form-group d-flex flex-column gap-2">
