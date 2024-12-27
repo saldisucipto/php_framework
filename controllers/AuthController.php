@@ -25,11 +25,12 @@ class AuthController extends Controller
         $register_model = new RegisterModel();
 
         if ($request->isPost()) {
-            $register_model->load_data($request->getBody());
-            Debug::debug_data($register_model);
+            $register_model->load_data(data: $request->getBody());
+            // Debug::debug_data($register_model);
             if ($register_model->validate() && $register_model->register()) {
                 return 'Success';
             }
+            // Debug::debug_data($register_model->errors);
             return $this->render(
                 'register',
                 ['model' => $register_model,]
@@ -38,6 +39,7 @@ class AuthController extends Controller
         $this->set_layout('auth');
         return $this->render('register', [
             'errors' => $errors,
+            'model' => $register_model,
         ]);
     }
 }

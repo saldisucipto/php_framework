@@ -1,5 +1,7 @@
 <?php
 
+use app\utils\Debug;
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,17 @@
                     <h4>Create Account </h4>
                     <div class=" col-sm-6 form-group d-flex flex-column gap-2">
                         <label for="exampleInputEmail1">Firstname</label>
-                        <input name="firstname" type="text" class="form-control" placeholder="Firstname">
+
+                        <div>
+                            <input name="firstname" type="text" value="<?php echo $model->firstname ?? "" ?>"
+                                class="form-control <?php echo $model->has_errors('firstname') ? 'is-invalid' : '' ?> "
+                                placeholder="Firstname">
+
+                            <div style="font-size: 8pt;" class="invalid-feedback mt-0 ">
+                                <?php echo $model->get_first_errors('firstname') ?>
+                            </div>
+                        </div>
+
                     </div>
                     <div class=" col-sm-6 form-group d-flex flex-column gap-2">
                         <label for="exampleInputEmail1">Lastname</label>
@@ -29,8 +41,10 @@
 
                 <div class="form-group d-flex flex-column gap-2">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <input name="email" type="email" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
                 </div>
                 <div class="form-group d-flex flex-column gap-2">
                     <label for="exampleInputPassword1">Password</label>

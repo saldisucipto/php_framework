@@ -10,7 +10,7 @@ class RegisterModel extends Model
     public string $lastname;
     public string $email;
     public string $password;
-    public string $password_confirmation;
+    public string $confirm_password;
 
     public function register()
     {
@@ -26,8 +26,7 @@ class RegisterModel extends Model
             'lastname' => [self::RULE_REQUIRED],
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
             'password' => [self::RULE_REQUIRED, [self::RULE_MIN, 'min' => 8]],
-            'password_confirmation' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']],
-
+            'confirm_password' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password'], [self::RULE_MIN, 'min' => 8]],
         ];
     }
 }
